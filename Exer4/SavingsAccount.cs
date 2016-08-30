@@ -1,0 +1,43 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Exer4
+{
+    public class SavingsAcct : Account
+    {
+        //attributes
+        private static double interestRate = 0.01;
+        private double interestAmt;
+
+        //constructor
+        public SavingsAcct(string AccountNumber, Customer AccountHolderName, double Balance) : base(AccountNumber, AccountHolderName, Balance)
+        {      
+        }
+
+
+        //General methods
+        public void CalculateInterest()
+        {
+            interestAmt = interestRate * balance;
+        }
+
+        public void CreditInterest()
+        {
+            CalculateInterest();
+            balance = balance + interestAmt;
+            Console.WriteLine("Balance with interest credited for savings account customer {0}: ${1}", accountHolderName.Name, balance);
+        }
+
+
+
+
+
+
+
+    }
+
+
+}
